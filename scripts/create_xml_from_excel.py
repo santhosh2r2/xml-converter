@@ -5,7 +5,7 @@ import os
 import re
 from xml.dom.minidom import parseString
 import xml.etree.ElementTree as ET
-from validator import validate_xml
+from scripts.validator import validate_xml
 
 
 def unflatten_json(flat_json):

@@ -1,23 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <person xmlns="http://www.example.com/person" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.example.com/person person.xsd">
- 	<personalInfo>
-		<name>John Doe</name>
-		<email>john.doe@example.com</email>
-		<address>
-			<houseNumber>123</houseNumber>
-			<city>Sample City</city>
-			<pincode>123456</pincode>
-		</address>
-	</personalInfo>
-	<household>
-		<children>
-			<child name="Alice" />
-			<child name="Bob" />
-		</children>
-		<married>yes</married>
-		<partner>
-			<age>32</age>
-			<name>Jane Doe</name>
-		</partner>
-	</household>
+    <personalInfo>
+        <name>John Doe</name>
+        <email>john.doe@example.com</email>
+        <address>
+            <houseNumber>123</houseNumber>
+            <city>Sample City</city>
+            <pincode>123456</pincode>
+        </address>
+    </personalInfo>
+    <household>
+        <children>
+            <child name="Alice" />
+            <child name="Bob" />
+        </children>
+        <married>yes</married>
+        <partner age="32" name="Jane Doe"></partner>
+    </household>
 </person>
