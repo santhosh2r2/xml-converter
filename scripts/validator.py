@@ -3,7 +3,7 @@ from lxml import etree
 def validate_xml(filepath):
     # Load the XML and XSD files
     xml_file = filepath
-    xsd_file = 'person.xsd'
+    xsd_file = 'sample/person.xsd'
 
     with open(xml_file, 'rb') as xml:
         xml_content = xml.read()

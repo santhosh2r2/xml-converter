@@ -5,7 +5,7 @@ import os
 import re
 from xml.dom.minidom import parseString
 import xml.etree.ElementTree as ET
-from scripts.validator import validate_xml
+from validator import validate_xml
 
 
 def unflatten_json(flat_json):
@@ -139,4 +139,4 @@ for col in df_modified.columns:
     if not df_modified[col]["CREATED"] == True:
         flat_dict = df_modified[col].dropna()
         json_data = unflatten_json(flat_dict)
-        create_xml_from_series_dict(json_data, flat_dict["personalInfo.name"], "../person.xsd")
+        create_xml_from_series_dict(json_data, flat_dict["personalInfo.name"], "../sample/person.xsd")
