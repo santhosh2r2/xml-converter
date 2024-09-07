@@ -1,9 +1,14 @@
+import logging
 from lxml import etree
+from logger import log_message, setup_logger
 
-def validate_xml(filepath):
+LOGGER = setup_logger("validate-xml", logging.DEBUG)
+
+
+def validate_xml(filepath, schema_location):
     # Load the XML and XSD files
     xml_file = filepath
-    xsd_file = 'sample/person.xsd'
+    xsd_file = schema_location
 
     with open(xml_file, 'rb') as xml:
         xml_content = xml.read()
@@ -19,11 +24,10 @@ def validate_xml(filepath):
     is_valid = xsd_doc.validate(xml_doc)
 
     if is_valid:
-        print(f"The XML document {filepath} is valid.")
+        log_message(LOGGER, logging.INFO,
+                    f"The XML document {filepath} is valid.")
     else:
-        print(f"The XML document {filepath} is invalid.")
+        log_message(LOGGER, logging.INFO,
+                    f"The XML document {filepath} is invalid.")
         for error in xsd_doc.error_log:
-            print(error.message)
-
-#validate_xml("./converted/John Doe.xml")
-#validate_xml("person.xml")
+            log_message(LOGGER, logging.ERROR, error.message)
